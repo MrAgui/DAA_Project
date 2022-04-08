@@ -1,4 +1,4 @@
-package com.bsu.myapplication;
+package com.bsu.JustDoIt;
 
 import android.content.Context;
 
