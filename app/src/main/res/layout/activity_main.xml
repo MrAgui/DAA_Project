@@ -2,7 +2,8 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/tasksText"
@@ -17,5 +18,32 @@
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold" />
+<!--Recycle View For the Task list-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tasksText"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:nestedScrollingEnabled="true"
+    ></androidx.recyclerview.widget.RecyclerView>
+
+<!-- Floating Action Button-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:src="@drawable/add">
+
+
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 
 </RelativeLayout>
