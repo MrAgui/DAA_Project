@@ -20,12 +20,12 @@
         android:textStyle="bold" />
 <!--Recycle View For the Task list-->
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasksRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tasksText"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:nestedScrollingEnabled="true"
-    ></androidx.recyclerview.widget.RecyclerView>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
 
 <!-- Floating Action Button-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
