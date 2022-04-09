@@ -12,8 +12,9 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        getSupportActionBar().hide();
+        getSupportActionBar().hide(); // hides the actionBar so splash Screen can be seen full Screen.
 
+        // Create new intent for the SplashActivity then go to the MainActivity Class
         final Intent  i = new Intent(SplashActivity.this, MainActivity.class);
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -24,3 +25,4 @@ public class SplashActivity extends AppCompatActivity {
         },1000);
     }
 }
+// After done in here recheck manifest file if the splashActivity is the Launcher

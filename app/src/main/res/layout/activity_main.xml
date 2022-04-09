@@ -12,22 +12,21 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_margin_Start="16dp"
-        android:layout_margin_Bottom="16dp"
-        android:text="Tasks"
+        android:text="@string/tasks"
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold" />
-<!--Recycle View For the Task list-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tasksRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tasksText"
         android:nestedScrollingEnabled="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+    </androidx.recyclerview.widget.RecyclerView>
 
-<!-- Floating Action Button-->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -38,9 +37,9 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@android:color/holo_green_dark"
+        android:backgroundTint="#523E27"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/add">
-
 
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>

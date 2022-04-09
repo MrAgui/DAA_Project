@@ -8,23 +8,18 @@
     app:cardCornerRadius="8dp"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp">
-    
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        >
+        android:padding="8dp">
         <CheckBox
             android:id="@+id/toDoCheckBox"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tool:text="sample Text"
+            android:buttonTint="#523E27"
             android:paddingStart="8dp"
-            android:buttonTint="@android:color/holo_green_dark"
+            tool:text="sample Text"/>
 
-            >
-
-        </CheckBox>
     </RelativeLayout>
 
 
