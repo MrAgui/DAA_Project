@@ -39,7 +39,10 @@
         android:layout_marginBottom="32dp"
         android:backgroundTint="#523E27"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/add">
+        android:src="@drawable/add"
+        app:backgroundTint="@color/white"
+        app:elevation="6dp"
+        app:tint="@android:color/white">
 
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>

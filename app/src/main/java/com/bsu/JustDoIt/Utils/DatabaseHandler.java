@@ -1,6 +1,6 @@
 package com.bsu.JustDoIt.Utils;
 
-import android.annotation.SuppressLint;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -57,7 +57,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // @SuppressLint("Range")
-    public List<ToDoModel> getAllTask(){
+    public List<ToDoModel> getAllTasks(){
         List<ToDoModel> taskList = new ArrayList<>();
         Cursor cur = null;
         db.beginTransaction();
