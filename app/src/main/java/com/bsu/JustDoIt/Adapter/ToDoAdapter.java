@@ -17,7 +17,8 @@ import com.bsu.JustDoIt.R;
 import com.bsu.JustDoIt.Utils.DatabaseHandler;
 
 import java.util.List;
-
+// For the functionalities of the application
+//we have add, edit, delete.
 public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     // For the list of ToDolist in the mainActivity
     private List<ToDoModel> toDoList;
@@ -62,14 +63,27 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         return n!=0; //if n is not = 0 return true
     }
 
-    public void setTask(List<ToDoModel> toDoList){
+    public void setTask(List<ToDoModel> toDoList ){
         this.toDoList = toDoList;
+        //to update the recycler view real time
         notifyDataSetChanged();
     }
+
     public Context getContext(){
         return activity;
     }
 
+    public void deleteItem(int position){
+        ToDoModel item = toDoList.get(position);
+        db.deleteTask(item.getId());
+        toDoList.remove(position);
+        //to update the recycler view real time
+        notifyItemRemoved(position);
+    }
+
+
+
+    // For editing the tasks
     public void editItem(int position) {
         //get the item position you want to update
         ToDoModel item = toDoList.get(position);
