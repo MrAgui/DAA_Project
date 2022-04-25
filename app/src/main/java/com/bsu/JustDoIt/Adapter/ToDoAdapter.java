@@ -20,6 +20,7 @@ import java.util.List;
 // For the functionalities of the application
 //we have add, edit, delete.
 public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
+
     // For the list of ToDolist in the mainActivity
     private List<ToDoModel> toDoList;
     private MainActivity activity;
@@ -54,15 +55,19 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         });
     }
 
+    // Not needed only required by the class
     public int getItemCount(){
+        System.out.println("total list in App " + toDoList.size());
         return toDoList.size();
     }
+
 
     // For the Status int convert to Boolean Value
     private boolean toBoolean(int n){
         return n!=0; //if n is not = 0 return true
     }
 
+    //Constructor for toDoList
     public void setTask(List<ToDoModel> toDoList ){
         this.toDoList = toDoList;
         //to update the recycler view real time
@@ -77,8 +82,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         ToDoModel item = toDoList.get(position);
         db.deleteTask(item.getId());
         toDoList.remove(position);
-        //to update the recycler view real time
-        notifyItemRemoved(position);
+        notifyItemRemoved(position); //to update the recycler view real time
     }
 
 
@@ -87,7 +91,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     public void editItem(int position) {
         //get the item position you want to update
         ToDoModel item = toDoList.get(position);
-
         Bundle bundle = new Bundle();
         // get the key value and pass it to the functions
         bundle.putInt("id", item.getId());
@@ -96,9 +99,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         fragment.setArguments(bundle);
         fragment.show(activity.getSupportFragmentManager(), AddNewTask.TAG);
     }
-
-
-
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         CheckBox task;

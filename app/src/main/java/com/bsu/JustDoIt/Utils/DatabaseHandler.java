@@ -58,7 +58,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // @SuppressLint("Range")
     public List<ToDoModel> getAllTasks(){
+
+
         List<ToDoModel> taskList = new ArrayList<>();
+
+
         Cursor cur = null;
         db.beginTransaction();
         try{

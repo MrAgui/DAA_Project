@@ -21,10 +21,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements DialogCloseListener{
 
-    private RecyclerView tasksRecyclerView;
+    private RecyclerView tasksRecyclerView; // for the tasks UI
     private ToDoAdapter tasksAdapter;
     private FloatingActionButton fab;
-    private List<ToDoModel> taskList;
+    private List<ToDoModel> taskList; // List for interface implements ArrayList
 
     private DatabaseHandler db;
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         Collections.reverse(taskList);
         tasksAdapter.setTask(taskList);
 
-
+        // FOr inTouch commands such as swiping and onTouch
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecycleItemTouchHelper(tasksAdapter));
         itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
 
@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
 
         //new created list will add at top of the collection
         Collections.reverse(taskList);
-
         tasksAdapter.setTask(taskList);
         tasksAdapter.notifyDataSetChanged();
     }
